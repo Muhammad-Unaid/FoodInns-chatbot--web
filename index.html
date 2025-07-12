@@ -105,6 +105,69 @@
       "
     >
     </df-messenger>
+        <script>
+      // Wait for the window to load completely before applying styles
+      window.onload = function () {
+        const style = document.createElement("style");
+        style.innerHTML = `
+                /* Custom Styles for Dialogflow Messenger */
+                df-messenger {
+                    --df-messenger-bot-message: #536055;
+                    --df-messenger-button-titlebar-color: #536055;
+                    --df-messenger-button-titlebar-font-color: white;
+                    --df-messenger-chat-background-color: #ffffff;
+                    --df-messenger-font-color: #f3f4f5;
+                    --df-messenger-input-box-color: white;
+                    --df-messenger-input-font-color: rgba(0, 0, 0, 0.87);
+                    --df-messenger-input-placeholder-font-color: #757575;
+                    --df-messenger-minimized-chat-close-icon-color: rgba(0, 0, 0, 0.87);
+                    --df-messenger-send-icon: #000;
+                    --df-messenger-user-message: #536055;
+                    --df-messenger-chip-color: rgb(255, 255, 255);
+                    --df-messenger-chip-border-color: #536055;
+                    --df-messenger-focus-color: #1e88e5;
+                    --df-messenger-focus-color-contrast: white;
+                }
+
+
+
+                /* Styling bot messages */
+                df-messenger .df-message-bot {
+                    background-color: var(--df-messenger-bot-message);
+                    color: var(--df-messenger-font-color);
+                }
+
+                /* Styling user messages */
+                df-messenger .df-message-user {
+                    background-color: var(--df-messenger-user-message);
+                    color: var(--df-messenger-font-color);
+                }
+
+                /* Title bar styles */
+                df-messenger .df-messenger-titlebar {
+                    background-color: var(--df-messenger-button-titlebar-color);
+                    color: var(--df-messenger-button-titlebar-font-color);
+                }
+
+                /* Custom styles for input box */
+                df-messenger .df-messenger-input {
+                    background-color: var(--df-messenger-input-box-color);
+                    color: var(--df-messenger-input-font-color);
+                }
+
+                /* Placeholder customization */
+                df-messenger .df-messenger-input::placeholder {
+                    color: var(--df-messenger-input-placeholder-font-color);
+                }
+
+                /* Focus state */
+                df-messenger .df-messenger-input:focus {
+                    border-color: var(--df-messenger-focus-color);
+                }
+            `;
+        document.head.appendChild(style); // Dynamically append the styles
+      };
+    </script>
 
     <footer class="bg-dark text-white text-center py-3 mt-5">
       <p>&copy; 2025 FoodsInn. All rights reserved.</p>
